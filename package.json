@@ -19,6 +19,12 @@
     "test:coverage": "nyc --reporter=html --reporter=text mocha --exit -r ts-node/register 'tests/**/*.ts'",
     "test:watch": "nodemon --exec npm test"
   },
+  "lint-staged": {
+    "**/*.ts": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/krownpay/krownpay-backend-assessment.git"
@@ -35,6 +41,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "express-winston": "^4.2.0",
     "mongoose": "^6.9.1",
     "winston": "^3.8.2"
   },
@@ -43,6 +50,7 @@
     "@types/chai": "^4.3.4",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/express-winston": "^4.0.0",
     "@types/mocha": "^10.0.1",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^18.13.0",
