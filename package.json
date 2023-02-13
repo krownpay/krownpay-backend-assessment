@@ -2,9 +2,22 @@
   "name": "krownpay-backend-assessment",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "format": "prettier --config .prettierrc \"./src/**/*.ts\" --write",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "generate:docs": "typedoc",
+    "dev": "nodemon",
+    "dev:watch": "concurrently npm:dev npm:test:watch",
+    "build": "tsc",
+    "build:dev": "npm run postbuild && rm -rf dist && tsc",
+    "postbuild": "npm run format && npm run lint",
+    "postinstall": "husky install",
+    "test": "mocha --exit -r ts-node/register 'tests/**/*.ts' --timeout 10000",
+    "test:coverage": "nyc --reporter=html --reporter=text mocha --exit -r ts-node/register 'tests/**/*.ts'",
+    "test:watch": "nodemon --exec npm test"
   },
   "repository": {
     "type": "git",

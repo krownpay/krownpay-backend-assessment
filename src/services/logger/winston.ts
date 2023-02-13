@@ -1,8 +1,10 @@
-import winston from 'winston';
+import winston, { format } from 'winston';
+
+const { combine, timestamp, prettyPrint } = format;
 
 export const logger = winston.createLogger({
   level: 'debug',
-  defaultMeta: { service: 'backend-service' },
+  format: combine(timestamp(), prettyPrint()),
   transports: [
     new winston.transports.Console({ format: winston.format.simple() })
   ]
