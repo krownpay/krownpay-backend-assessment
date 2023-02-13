@@ -16,6 +16,7 @@ The following packages were installed to aid in the development process;
 
 - express-async-handler: Will be useful for writing asynchronous code in expressJS: [express-async-handler link](https://www.npmjs.com/package/express-async-handler)
 - mongoose: An ODM for connecting to mongoDB and perform database operations: [mongodb link](https://mongoosejs.com/)
+- mocha, chai and chai-http: The unit tests will be done using this libraries. Chai-http is useful for testing http endpoints
 
 ### Instructions
 
