@@ -5,5 +5,6 @@ import { ServerConfig } from '../typings';
  * @type {ServerConfig}
  */
 export const config: ServerConfig = {
-  port: 8000
+  port: 8000,
+  mongoUri: 'mongodb://localhost:27017'
 };
