@@ -24,6 +24,7 @@ Given a user object with the type User:
 		phoneNumber: string;
 		verified: boolean; 
 	}
+
 - Create a route to create a new user using the path `/users`
 		- All fields must be filled.
 		- `email` property must be a valid email address.
@@ -31,6 +32,7 @@ Given a user object with the type User:
 		- `phoneNumber` property must be in the right format for Australian phone numbers.
 		- Write a unit test for the implementation.
 		
+        
 - Create a route to retrieve an existing user by id using the path `/users/:id`
 		- The user must exist in the database.
 		- Write a unit test for the implementation.
